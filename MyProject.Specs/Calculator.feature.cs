@@ -91,11 +91,34 @@ this.ScenarioInitialize(scenarioInfo);
 #line 8
        testRunner.Given("I have entered 50 into the calculator", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 9
-       testRunner.And("I have also entered 70 into the calculator", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+       testRunner.And("I have also entered 70 into the calculators", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 10
        testRunner.When("I press add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 11
        testRunner.Then("the result should be 120 on the screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.FactAttribute(DisplayName="Subtract two numbers")]
+        [Xunit.TraitAttribute("FeatureTitle", "Calculator")]
+        [Xunit.TraitAttribute("Description", "Subtract two numbers")]
+        [Xunit.TraitAttribute("Category", "my2ndtag")]
+        public virtual void SubtractTwoNumbers()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Subtract two numbers", null, new string[] {
+                        "my2ndtag"});
+#line 14
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 15
+       testRunner.Given("I have entered 50 into the subcalculator", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 16
+       testRunner.And("I have entered 10 into the subcalculator", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 17
+       testRunner.When("I press subtract", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 18
+       testRunner.Then("the result must be 10 on the screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

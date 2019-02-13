@@ -8,32 +8,60 @@ namespace MyProject.Specs
     [Binding]
     public class CalculatorSteps
     {
-        private int result;
+        private int addresult;
+        private int subresult;
 
         private Calculator calculator = new Calculator();
 
         [Given(@"I have entered (.*) into the calculator")]
-        public void GivenIHaveEnteredIntoTheCalculator(int number)
+        public void GivenIHaveEnteredIntoTheCalculator1(int number)
         {
             calculator.FirstNumber = number;
         }
-        
-        [Given(@"I have also entered (.*) into the calculator")]
-        public void GivenIHaveAlsoEnteredIntoTheCalculator(int number)
+
+        [Given(@"I have also entered (.*) into the calculators")]
+        public void GivenIHaveAlsoEnteredIntoTheCalculators(int p0)
         {
-            calculator.SecondNumber = number;
+            ScenarioContext.Current.Pending();
         }
-        
+
         [When(@"I press add")]
         public void WhenIPressAdd()
         {
-            result = calculator.Add();
+            addresult = calculator.Add();
         }
         
         [Then(@"the result should be (.*) on the screen")]
         public void ThenTheResultShouldBeOnTheScreen(int expectedResult)
         {
-            Assert.AreEqual(expectedResult, result);
+            Assert.AreEqual(expectedResult, addresult);
         }
+
+        //Subtract
+
+        [Given(@"I have entered (.*) into the subcalculator")]
+        public void GivenIHaveEnteredIntoTheSubcalculator(int subtractnumber)
+        {
+            calculator.sFirstNumber = subtractnumber;
+        }
+
+        [Given(@"I have also entered (.*) into the calculator")]
+        public void GivenIHaveAlsoEnteredIntoTheSubcalculator(int subtractnumber)
+        {
+            calculator.sSecondNumber = subtractnumber;
+        }
+
+        [When(@"I press subtract")]
+        public void WhenIPressSubtract()
+        {
+            subresult = calculator.Subtract();
+        }
+
+        [Then(@"the result must be (.*) on the screen")]
+        public void ThenTheResultMustBeOnTheScreen(int subexpectedResult)
+        {
+            Assert.AreEqual(subexpectedResult, subresult);
+        }
+
     }
 }

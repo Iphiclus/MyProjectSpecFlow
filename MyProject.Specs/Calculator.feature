@@ -6,6 +6,13 @@
 @mytag
 Scenario: Add two numbers
        Given I have entered 50 into the calculator
-       And I have also entered 70 into the calculator
+       And I have also entered 70 into the calculators
        When I press add
        Then the result should be 120 on the screen
+
+@my2ndtag
+Scenario: Subtract two numbers
+       Given I have entered 50 into the subcalculator
+       And I have entered 10 into the subcalculator
+       When I press subtract
+       Then the result must be 10 on the screen
