@@ -9,8 +9,7 @@ namespace MyProject.Specs
     public class CalculatorSteps
     {
         private int addresult;
-        private int subresult;
-
+       
         private Calculator calculator = new Calculator();
 
         [Given(@"I have entered (.*) into the calculator")]
@@ -20,9 +19,9 @@ namespace MyProject.Specs
         }
 
         [Given(@"I have also entered (.*) into the calculators")]
-        public void GivenIHaveAlsoEnteredIntoTheCalculators(int p0)
+        public void GivenIHaveAlsoEnteredIntoTheCalculators(int number)
         {
-            ScenarioContext.Current.Pending();
+            calculator.SecondNumber = number;
         }
 
         [When(@"I press add")]
@@ -35,32 +34,6 @@ namespace MyProject.Specs
         public void ThenTheResultShouldBeOnTheScreen(int expectedResult)
         {
             Assert.AreEqual(expectedResult, addresult);
-        }
-
-        //Subtract
-
-        [Given(@"I have entered (.*) into the subcalculator")]
-        public void GivenIHaveEnteredIntoTheSubcalculator(int subtractnumber)
-        {
-            calculator.sFirstNumber = subtractnumber;
-        }
-
-        [Given(@"I have also entered (.*) into the calculator")]
-        public void GivenIHaveAlsoEnteredIntoTheSubcalculator(int subtractnumber)
-        {
-            calculator.sSecondNumber = subtractnumber;
-        }
-
-        [When(@"I press subtract")]
-        public void WhenIPressSubtract()
-        {
-            subresult = calculator.Subtract();
-        }
-
-        [Then(@"the result must be (.*) on the screen")]
-        public void ThenTheResultMustBeOnTheScreen(int subexpectedResult)
-        {
-            Assert.AreEqual(subexpectedResult, subresult);
         }
 
     }
