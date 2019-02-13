@@ -16,6 +16,7 @@ namespace MyProject.Specs
         public void GivenIHaveEnteredIntoTheCalculator1(int number)
         {
             calculator.FirstNumber = number;
+
         }
 
         [Given(@"I have also entered (.*) into the calculators")]
