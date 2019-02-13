@@ -21,8 +21,8 @@ namespace MyProject.Specs
             subcalculator.SFirstNumber = subnumbber;
         }
 
-        [Given(@"I have also entered (.*) into the subcalculator")]
-        public void GivenIHaveEnteredAlsoIntoTheSubcalculator(int subnumbber)
+        [Given(@"I have entered (.*) into the subcalculators")]
+        public void GivenIHaveEnteredIntoTheSubcalculators(int subnumbber)
         {
             subcalculator.SSecondNumber = subnumbber;
         }

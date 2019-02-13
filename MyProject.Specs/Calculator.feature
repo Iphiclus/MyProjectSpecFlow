@@ -13,6 +13,6 @@ Scenario: Add two numbers
 @my2ndtag
 Scenario: Subtract two numbers
        Given I have entered 50 into the subcalculator
-       And I have entered 10 into the subcalculator
+       And I have entered 10 into the subcalculators
        When I press subtract
-       Then the result must be 10 on the screen
+       Then the result must be 40 on the screen
